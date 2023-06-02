@@ -1,7 +1,7 @@
 {
   "name": "@vestigefi/widgets",
   "version": "1.0.0",
-  "description": "Algorand asset charts & swap widgets that can be embedded on your website made by Vestige.fi",
+  "description": "Embeddable asset charts & swap widgets for Algorand",
   "main": "dist/index.js",
   "directories": {
     "example": "example"

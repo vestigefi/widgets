@@ -1,22 +1,23 @@
-# react-dayjs-picker
+# @vestigefi/widgets
 
-> Simple date picker and calendar made for React and Day.js
+> Embeddable asset charts & swap widgets for Algorand
 
-[![NPM](https://img.shields.io/npm/v/react-dayjs-picker.svg)](https://www.npmjs.com/package/react-dayjs-picker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/npm/l/react-dayjs-picker)](https://www.npmjs.com/package/react-dayjs-picker)
+[![NPM](https://img.shields.io/npm/v/@vestigefi/widgets.svg)](https://www.npmjs.com/package/@vestigefi/widgets) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/npm/l/@vestigefi/widgets)](https://www.npmjs.com/package/@vestigefi/widgets)
 
 ## Demo/Documentation
 
-[Demo and API docs are available here!](https://grzracz.github.io/react-dayjs-picker/)
-
+[Demo and API docs are available here!](https://vestigefi.github.io/widgets/)
 
 ## Install
 
 ```bash
-npm install --save react-dayjs-picker
+npm install --save @vestigefi/widgets
 ```
+
 or
+
 ```bash
-yarn add react-dayjs-picker
+yarn add @vestigefi/widgets
 ```
 
 ## Usage
@@ -24,16 +25,13 @@ yarn add react-dayjs-picker
 ```tsx
 import React, { FC, useState } from 'react'
 
-import { DatePicker } from 'react-dayjs-picker'
-import 'react-dayjs-picker/dist/index.css'
+import { Swap } from '@vestigefi/widgets'
 
 export const Example: FC = () => {
-    const [open, setOpen] = useState(false)
-
-    return <DatePicker isOpen={open} setIsOpen={setOpen} />
+  return <Swap assetOut={700965019} />
 }
 ```
 
 ## License
 
-MIT © [grzracz](https://github.com/grzracz)
+MIT © [Vestige Labs](https://github.com/vestigefi)
