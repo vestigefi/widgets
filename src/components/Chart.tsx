@@ -15,15 +15,11 @@ const intervals = [
   '1W',
   '1M'
 ]
-type Interval = typeof intervals[number]
+type Interval = (typeof intervals)[number]
 
 interface ChartProps {
   assetId?: number
-  poolId?: number
-  currency?: 'ALGO' | 'USD' | 'EUR' | 'GBP' | 'BTC'
-  invert?: boolean
-  adjust?: boolean
-  tools?: boolean
+  denominatingAssetId?: number
   interval?: Interval
   width?: number
   height?: number
@@ -33,11 +29,7 @@ interface ChartProps {
 
 const Chart: React.FC<ChartProps> = ({
   assetId,
-  poolId,
-  currency,
-  invert,
-  adjust,
-  tools,
+  denominatingAssetId,
   interval,
   width,
   height,
@@ -48,17 +40,16 @@ const Chart: React.FC<ChartProps> = ({
     const url = new URL(
       `https://vestige.fi/widget/${assetId || 700965019}/chart`
     )
-    if (poolId) url.searchParams.append('poolId', poolId.toString())
+    url.searchParams.append('noCookie', 'true')
     if (interval) url.searchParams.append('interval', interval)
-    if (currency) url.searchParams.append('currency', currency)
-    if (invert !== undefined)
-      url.searchParams.append('invert', invert ? 'true' : 'false')
-    if (adjust !== undefined)
-      url.searchParams.append('adjust', adjust ? 'true' : 'false')
-    if (tools !== undefined)
-      url.searchParams.append('tools', tools ? 'true' : 'false')
+    if (denominatingAssetId) {
+      url.searchParams.append(
+        'denominatingAssetId',
+        denominatingAssetId.toString()
+      )
+    }
     return url.href
-  }, [assetId, poolId, currency, invert, adjust, tools, interval])
+  }, [assetId, denominatingAssetId, interval])
 
   return (
     <iframe

@@ -1,4 +1,3 @@
-import React from 'react'
 import ShieldImage from './ShieldImage'
 
 const Header = () => {
@@ -21,12 +20,12 @@ const Header = () => {
       </div>
       <div className='flex gap-2 justify-center p-2'>
         <ShieldImage
-          href={'https://www.npmjs.com/package/@vestigefi/widgets'}
-          src={'https://img.shields.io/npm/v/@vestigefi/widgets.svg'}
+          href='https://www.npmjs.com/package/@vestigefi/widgets'
+          src='https://img.shields.io/npm/v/@vestigefi/widgets.svg'
           alt='npm package version'
         />
         <ShieldImage
-          href={'https://github.com/vestigefi/widgets'}
+          href='https://github.com/vestigefi/widgets'
           src={
             'https://img.shields.io/github/stars/vestigefi/widgets?style=social'
           }

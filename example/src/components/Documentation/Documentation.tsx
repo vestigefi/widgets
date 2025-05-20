@@ -1,4 +1,3 @@
-import React from 'react'
 import PropRow from './PropRow'
 
 const CHART_PROPS = [
@@ -9,43 +8,11 @@ const CHART_PROPS = [
     description: 'Primary ASA id for which the chart should be displayed'
   },
   {
-    name: 'poolId',
+    name: 'denominatingAssetId',
     type: 'number',
-    defaultValue: undefined,
+    defaultValue: 0,
     description:
-      'Vestige internal pool id for a specific pool. Can be found through free-api.vestige.fi/asset/<id>/pools',
-    query: '?poolId=123'
-  },
-  {
-    name: 'currency',
-    type: "one of ['ALGO', 'USD', 'EUR', 'GBP', 'BTC']",
-    defaultValue: 'ALGO',
-    description:
-      'Currency in which the chart should be denominated (ignored if poolId specified)',
-    query: '?currency=USD'
-  },
-  {
-    name: 'invert',
-    type: 'boolean',
-    defaultValue: false,
-    description: 'Whether the chart should be inverted (true) or not (false)',
-    query: '?invert=true'
-  },
-  {
-    name: 'adjust',
-    type: 'boolean',
-    defaultValue: true,
-    description:
-      'Whether the chart should be adjusted using IQR for better viewing (true) or not (false)',
-    query: '?adjust=false'
-  },
-  {
-    name: 'tools',
-    type: 'boolean',
-    defaultValue: undefined,
-    description:
-      'Whether the chart should display drawing tools by default (true) or not (false)',
-    query: '?tools=true'
+      'Secondary ASA id in which the primary ASA should be denominated'
   },
   {
     name: 'interval',
@@ -76,7 +43,7 @@ const CHART_PROPS = [
   {
     name: 'style',
     type: 'React.CSSProperties',
-    defaultValue: {},
+    defaultValue: '{}',
     description: 'Style object object passed to chart component'
   }
 ]
@@ -87,28 +54,22 @@ const SWAP_PROPS = [
     type: 'number',
     defaultValue: 0,
     description: 'Asset id for trade source',
-    query: '?asset_in=0'
+    query: '?assetIn=0'
   },
   {
     name: 'assetOut',
     type: 'number',
     defaultValue: 31566704,
     description: 'Asset id for trade destination',
-    query: '?asset_out=0'
+    query: '?assetOut=0'
   },
   {
-    name: 'amountIn',
+    name: 'forceAssetId',
     type: 'number',
-    defaultValue: undefined,
-    description: 'Default amount (with decimals) for trade source',
-    query: '?amount_in=100'
-  },
-  {
-    name: 'amountOut',
-    type: 'number',
-    defaultValue: undefined,
-    description: 'Default amount (with decimals) for trade destination',
-    query: '?amount_out=100'
+    defaultValue: 0,
+    description:
+      'Force the asset to always be displayed even if the user selects another asset',
+    query: '?forceAssetId=0'
   },
   {
     name: 'width',
@@ -131,7 +92,7 @@ const SWAP_PROPS = [
   {
     name: 'style',
     type: 'React.CSSProperties',
-    defaultValue: {},
+    defaultValue: '{}',
     description: 'Style object object passed to chart component'
   }
 ]

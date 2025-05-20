@@ -1,47 +1,32 @@
 {
-  "name": "@vestigefi/widgets-example",
-  "homepage": ".",
-  "version": "0.0.0",
+  "name": "example2",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node ../node_modules/@craco/craco/bin/craco.js start",
-    "build": "node ../node_modules/@craco/craco/bin/craco.js build",
-    "test": "node ../node_modules/@craco/craco/bin/craco.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
-    "@testing-library/react": "link:../node_modules/@testing-library/react",
-    "@testing-library/user-event": "link:../node_modules/@testing-library/user-event",
-    "@types/jest": "link:../node_modules/@types/jest",
-    "@types/node": "link:../node_modules/@types/node",
-    "@types/react": "link:../node_modules/@types/react",
-    "@types/react-dom": "link:../node_modules/@types/react-dom",
-    "autoprefixer": "link:../node_modules/autoprefixer",
-    "postcss": "link:../node_modules/postcss",
-    "react": "link:../node_modules/react",
-    "@vestigefi/widgets": "link:..",
-    "react-dom": "link:../node_modules/react-dom",
-    "react-scripts": "link:../node_modules/react-scripts",
-    "typescript": "link:../node_modules/typescript",
-    "react-icons": "link:../node_modules/react-icons"
+    "@tailwindcss/vite": "^4.1.7",
+    "@vestigefi/widgets": "../",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@eslint/js": "^9.25.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5"
   }
 }
