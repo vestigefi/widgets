@@ -13,14 +13,12 @@ const App = () => {
           assetId={700965019}
           denominatingAssetId={1284444444}
           className='rounded-lg max-w-full'
-          theme='light'
         />
         <Swap
           assetIn={1284444444}
           assetOut={700965019}
           forceAssetId={700965019}
           className='rounded-lg'
-          theme='light'
         />
       </div>
       <InstallationGuide />
